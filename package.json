@@ -2,17 +2,17 @@
   "name": "angular-portfolio",
   "version": "1.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "build:production": "ng build --configuration production",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:angular-portfolio": "node dist/angular-portfolio/server/server.mjs",
-    "preview:ssr": "npm run build && npm run serve:ssr:angular-portfolio",
-    "cloudflare:build": "npm run build:production",
-    "cloudflare:deploy": "npm run build:production && npx wrangler deploy"
-  },
+  "ng": "ng",
+  "start": "ng serve",
+  "build": "ng build",
+  "build:production": "ng build --configuration production",
+  "watch": "ng build --watch --configuration development",
+  "test": "ng test",
+  "serve:ssr:angular-portfolio": "node dist/angular-portfolio/server/server.mjs",
+  "preview:ssr": "npm run build && npm run serve:ssr:angular-portfolio",
+  "cloudflare:build": "npm run build:production",
+  "cloudflare:deploy": "npm run build:production && npx wrangler deploy"
+},
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.2.0",
