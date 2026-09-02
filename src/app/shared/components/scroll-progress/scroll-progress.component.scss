@@ -1,0 +1,19 @@
+:host {
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  z-index: 110;
+  pointer-events: none;
+}
+
+.progress {
+  height: 2px;
+  width: 100%;
+  background: transparent;
+}
+
+.progress__bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transition: width 80ms linear;
+}

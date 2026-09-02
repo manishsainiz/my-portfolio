@@ -1,0 +1,16 @@
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <p class="footer__name mono">Manish</p>
+      <p class="footer__role">Angular Developer · Frontend Engineer</p>
+    </div>
+
+    <ul class="footer__stack mono">
+      @for (item of stack; track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
+
+    <p class="footer__copy mono">&copy; {{ year }} Manish. Built with Angular.</p>
+  </div>
+</footer>

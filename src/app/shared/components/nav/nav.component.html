@@ -1,0 +1,38 @@
+<header class="nav" [class.nav--scrolled]="isScrolled()">
+  <div class="nav__inner container">
+    <a href="#home" class="nav__brand mono">MS<span class="nav__brand-dot">.</span></a>
+
+    <nav class="nav__links" aria-label="Primary">
+      @for (link of links; track link.fragment) {
+        <a
+          [href]="'#' + link.fragment"
+          class="nav__link"
+          [class.nav__link--active]="activeSection() === link.fragment"
+        >{{ link.label }}</a>
+      }
+    </nav>
+
+    <div class="nav__actions">
+      <a href="/resume-placeholder.pdf" class="btn btn-ghost nav__resume mono" download>Resume</a>
+      <button
+        type="button"
+        class="nav__toggle"
+        [attr.aria-expanded]="isMobileOpen()"
+        aria-controls="mobile-menu"
+        aria-label="Toggle navigation menu"
+        (click)="toggleMobile()"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  @if (isMobileOpen()) {
+    <nav id="mobile-menu" class="nav__mobile" aria-label="Mobile">
+      @for (link of links; track link.fragment) {
+        <a [href]="'#' + link.fragment" class="nav__mobile-link" (click)="closeMobile()">{{ link.label }}</a>
+      }
+      <a href="/resume-placeholder.pdf" class="btn btn-primary nav__mobile-resume" download (click)="closeMobile()">Download Resume</a>
+    </nav>
+  }
+</header>

@@ -1,0 +1,55 @@
+<div class="modal-backdrop" (click)="onBackdropClick($event)">
+  <div class="modal" role="dialog" aria-modal="true" [attr.aria-labelledby]="'project-modal-title'">
+    <button type="button" class="modal__close" (click)="close()" aria-label="Close project details">&times;</button>
+
+    <p class="section-label">Project</p>
+    <h3 id="project-modal-title" class="modal__title">{{ project.title }}</h3>
+    <p class="modal__tagline">{{ project.tagline }}</p>
+
+    <ul class="modal__tech mono">
+      @for (tech of project.technology; track tech) {
+        <li class="pill">{{ tech }}</li>
+      }
+    </ul>
+
+    @if (project.flow?.length) {
+      <div class="modal__flow mono">
+        @for (step of project.flow; track step; let last = $last) {
+          <span class="modal__flow-step">{{ step }}</span>
+          @if (!last) {
+            <span class="modal__flow-arrow" aria-hidden="true">→</span>
+          }
+        }
+      </div>
+    }
+
+    <div class="modal__section">
+      <h4>Problem</h4>
+      <p>{{ project.detail.problem }}</p>
+    </div>
+    <div class="modal__section">
+      <h4>Approach</h4>
+      <p>{{ project.detail.approach }}</p>
+    </div>
+    <div class="modal__section">
+      <h4>Implementation</h4>
+      <p>{{ project.detail.implementation }}</p>
+    </div>
+    <div class="modal__section">
+      <h4>Challenges</h4>
+      <p>{{ project.detail.challenges }}</p>
+    </div>
+    <div class="modal__section">
+      <h4>Engineering Decisions</h4>
+      <p>{{ project.detail.decisions }}</p>
+    </div>
+    <div class="modal__section">
+      <h4>Lessons</h4>
+      <p>{{ project.detail.lessons }}</p>
+    </div>
+
+    @if (project.detail.codeSnippet) {
+      <pre class="modal__code mono"><code>{{ project.detail.codeSnippet }}</code></pre>
+    }
+  </div>
+</div>

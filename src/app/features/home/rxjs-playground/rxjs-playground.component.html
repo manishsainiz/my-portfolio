@@ -1,0 +1,65 @@
+<section id="rxjs" class="section rxjs">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <p class="section-label">RxJS Playground</p>
+      <h2 class="section-title">RxJS — Understanding the flow.</h2>
+      <p class="section-sub">Four flattening operators, four very different behaviors when a new value arrives mid-request.</p>
+    </div>
+
+    <div class="rxjs__tabs mono" role="tablist" appReveal>
+      @for (op of operators; track op.id) {
+        <button
+          type="button"
+          role="tab"
+          class="rxjs__tab"
+          [class.rxjs__tab--active]="activeId() === op.id"
+          [attr.aria-selected]="activeId() === op.id"
+          (click)="select(op.id)"
+        >
+          {{ op.label }}
+        </button>
+      }
+    </div>
+
+    @if (active(); as op) {
+      <div class="rxjs__panel card" appReveal>
+        <div class="rxjs__panel-grid">
+          <div class="rxjs__panel-text">
+            <h3>{{ op.label }}</h3>
+            <p>{{ op.description }}</p>
+
+            <h4 class="mono">Use case</h4>
+            <p>{{ op.useCase }}</p>
+
+            <h4 class="mono">Code</h4>
+            <pre class="rxjs__code mono"><code>{{ op.code }}</code></pre>
+
+            <h4 class="mono">Result behavior</h4>
+            <p>{{ op.behavior }}</p>
+          </div>
+
+          <div class="rxjs__visual">
+            <h4 class="mono">Visual request flow</h4>
+            <div class="rxjs__lanes">
+              @for (lane of op.lanes; track lane.label) {
+                <div class="rxjs__lane">
+                  <span class="rxjs__lane-label mono">{{ lane.label }}</span>
+                  <div class="rxjs__lane-track">
+                    <div
+                      class="rxjs__lane-bar"
+                      [class.rxjs__lane-bar--cancelled]="lane.outcome === 'cancelled'"
+                      [class.rxjs__lane-bar--ignored]="lane.outcome === 'ignored'"
+                      [style.left.%]="lane.startPct"
+                      [style.width.%]="lane.endPct - lane.startPct === 0 ? 1.5 : lane.endPct - lane.startPct"
+                    ></div>
+                  </div>
+                  <span class="rxjs__lane-outcome mono">{{ lane.outcome }}</span>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

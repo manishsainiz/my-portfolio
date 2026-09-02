@@ -1,0 +1,57 @@
+<section id="projects" class="section projects">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <p class="section-label">Projects</p>
+      <h2 class="section-title">Engineering case studies, not screenshots.</h2>
+      <p class="section-sub">Each project below reflects a real problem, a chosen architecture, and the trade-offs that came with it.</p>
+    </div>
+
+    <div class="projects__filters mono" appReveal>
+      @for (filter of filters(); track filter) {
+        <button
+          type="button"
+          class="projects__filter"
+          [class.projects__filter--active]="activeFilter() === filter"
+          (click)="setFilter(filter)"
+        >
+          {{ filter }}
+        </button>
+      }
+    </div>
+
+    <div class="projects__grid">
+      @for (project of filteredProjects(); track project.id) {
+        <button type="button" class="projects__card card" appReveal (click)="open(project)">
+          <div class="projects__card-head">
+            <span class="projects__label mono">Project</span>
+            <h3>{{ project.title }}</h3>
+          </div>
+          <p class="projects__tagline">{{ project.tagline }}</p>
+
+          <ul class="projects__tech mono">
+            @for (tech of project.technology; track tech) {
+              <li class="pill">{{ tech }}</li>
+            }
+          </ul>
+
+          <dl class="projects__meta">
+            <div>
+              <dt class="mono">Problem</dt>
+              <dd>{{ project.problem }}</dd>
+            </div>
+            <div>
+              <dt class="mono">Impact</dt>
+              <dd>{{ project.impact }}</dd>
+            </div>
+          </dl>
+
+          <span class="projects__cta mono">View case study →</span>
+        </button>
+      }
+    </div>
+  </div>
+</section>
+
+@if (selectedProject(); as project) {
+  <app-project-detail-modal [project]="project" (closed)="close()" />
+}

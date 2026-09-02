@@ -1,0 +1,28 @@
+<section id="production" class="section production">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <p class="section-label">Production Engineering</p>
+      <h2 class="section-title">From localhost to production.</h2>
+    </div>
+
+    <div class="production__pipeline mono" appReveal>
+      @for (step of pipeline; track step.label; let last = $last) {
+        <div class="production__step">
+          <div class="production__step-box">
+            <span class="production__step-label">{{ step.label }}</span>
+            <span class="production__step-desc">{{ step.description }}</span>
+          </div>
+          @if (!last) {
+            <span class="production__arrow" aria-hidden="true">↓</span>
+          }
+        </div>
+      }
+    </div>
+
+    <ul class="production__extras" appReveal>
+      @for (item of extras; track item) {
+        <li class="card production__extra">{{ item }}</li>
+      }
+    </ul>
+  </div>
+</section>

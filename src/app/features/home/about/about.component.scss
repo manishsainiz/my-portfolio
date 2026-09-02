@@ -1,0 +1,40 @@
+.about__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.about__row {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 0.5rem 1.25rem;
+  align-items: baseline;
+  padding: 1.5rem;
+  border-radius: 0;
+  border: none;
+  background: var(--bg-elevated);
+
+  @media (min-width: 720px) {
+    grid-template-columns: 4rem 12rem 1fr;
+  }
+}
+
+.about__index {
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+.about__title {
+  font-size: 1.05rem;
+}
+
+.about__desc {
+  grid-column: 2 / -1;
+
+  @media (min-width: 720px) {
+    grid-column: 3;
+  }
+}

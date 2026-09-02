@@ -1,0 +1,20 @@
+<section id="performance" class="section performance">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <p class="section-label">Performance Lab</p>
+      <h2 class="section-title">Performance is a feature.</h2>
+    </div>
+
+    <div class="performance__grid">
+      @for (topic of topics; track topic.id) {
+        <div class="performance__card card" appReveal>
+          <h3>{{ topic.title }}</h3>
+          <p>{{ topic.summary }}</p>
+          @if (topic.code) {
+            <pre class="performance__code mono"><code>{{ topic.code }}</code></pre>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>

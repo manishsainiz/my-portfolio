@@ -1,0 +1,35 @@
+<section id="contact" class="section contact">
+  <div class="container contact__inner" appReveal>
+    <p class="section-label">Contact</p>
+    <h2 class="contact__headline">Let's build something great.</h2>
+
+    <div class="contact__details">
+      <button type="button" class="contact__row" (click)="copy('email')">
+        <span class="contact__row-label mono">Email</span>
+        <span class="contact__row-value">{{ contact.email }}</span>
+        <span class="contact__row-action mono">{{ copiedField() === 'email' ? 'Copied!' : 'Copy' }}</span>
+      </button>
+
+      <button type="button" class="contact__row" (click)="copy('phone')">
+        <span class="contact__row-label mono">Phone</span>
+        <span class="contact__row-value">{{ contact.phone }}</span>
+        <span class="contact__row-action mono">{{ copiedField() === 'phone' ? 'Copied!' : 'Copy' }}</span>
+      </button>
+    </div>
+
+    <div class="contact__ctas">
+      <a class="btn btn-primary" [href]="'mailto:' + contact.email">Email Me</a>
+      <a class="btn btn-ghost" [href]="'tel:' + contact.phone">Call Me</a>
+      @if (contact.linkedinUrl) {
+        <a class="btn btn-ghost" [href]="contact.linkedinUrl" target="_blank" rel="noopener">LinkedIn</a>
+      } @else {
+        <span class="btn btn-ghost contact__disabled" aria-disabled="true">LinkedIn (add URL)</span>
+      }
+      @if (contact.githubUrl) {
+        <a class="btn btn-ghost" [href]="contact.githubUrl" target="_blank" rel="noopener">GitHub</a>
+      } @else {
+        <span class="btn btn-ghost contact__disabled" aria-disabled="true">GitHub (add URL)</span>
+      }
+    </div>
+  </div>
+</section>

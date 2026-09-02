@@ -1,0 +1,50 @@
+<section id="home" class="hero section">
+  <div class="container hero__grid">
+    <div class="hero__copy" appReveal>
+      <p class="section-label">Senior Angular Developer / Frontend Engineer</p>
+      <h1 class="hero__headline">Building fast, scalable web experiences with Angular.</h1>
+      <p class="hero__sub">
+        Senior Angular Developer focused on frontend architecture, reactive systems, SSR, performance and
+        production-grade applications.
+      </p>
+
+      <div class="hero__ctas">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#angular-evolution" class="btn btn-ghost">Explore Angular Knowledge</a>
+        <a href="#contact" class="btn btn-ghost">Contact Me</a>
+        <a href="/resume-placeholder.pdf" class="btn btn-ghost" download>Download Resume</a>
+      </div>
+
+      <ol class="hero__flow mono" aria-label="Engineering stack flow">
+        @for (step of flow; track step.label; let last = $last) {
+          <li class="hero__flow-step">
+            <span>{{ step.label }}</span>
+            @if (!last) {
+              <span class="hero__flow-arrow" aria-hidden="true">↓</span>
+            }
+          </li>
+        }
+      </ol>
+    </div>
+
+    <div class="hero__visual" appReveal aria-hidden="true">
+      <div class="hero__orbit">
+        <div class="hero__center">
+          <span class="mono">ANGULAR</span>
+          <span class="mono hero__center-sub">ENGINEER</span>
+        </div>
+        @for (node of nodes; track node.label) {
+          <div
+            class="hero__node mono"
+            [class.hero__node--accent]="node.label === 'AI'"
+            [style.top.%]="node.top"
+            [style.left.%]="node.left"
+            [style.animation-delay.s]="node.delay"
+          >
+            {{ node.label }}
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

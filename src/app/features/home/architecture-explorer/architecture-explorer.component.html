@@ -1,0 +1,59 @@
+<section id="architecture" class="section architecture">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <p class="section-label">Architecture</p>
+      <h2 class="section-title">An Angular application, mapped end to end.</h2>
+      <p class="section-sub">Select a node to see what it does, why it exists, and how it's used correctly.</p>
+    </div>
+
+    <div class="architecture__layout">
+      <div class="architecture__diagram card" appReveal>
+        <svg viewBox="0 0 800 640" class="architecture__svg" role="img" aria-label="Angular application architecture diagram">
+          @for (edge of edges(); track edge.key) {
+            <line
+              [attr.x1]="edge.x1" [attr.y1]="edge.y1"
+              [attr.x2]="edge.x2" [attr.y2]="edge.y2"
+              class="architecture__edge"
+            />
+          }
+          @for (node of nodes; track node.id) {
+            <g
+              class="architecture__node-group"
+              [class.architecture__node-group--active]="activeId() === node.id"
+              [attr.transform]="'translate(' + node.x + ',' + node.y + ')'"
+              (click)="select(node.id)"
+              tabindex="0"
+              role="button"
+              [attr.aria-pressed]="activeId() === node.id"
+              (keydown.enter)="select(node.id)"
+            >
+              <rect x="-78" y="-22" width="156" height="44" rx="22" class="architecture__node-rect" />
+              <text text-anchor="middle" dy="5" class="architecture__node-label mono">{{ node.label }}</text>
+            </g>
+          }
+        </svg>
+      </div>
+
+      <div class="architecture__info card" appReveal>
+        @if (active(); as node) {
+          <h3>{{ node.label }}</h3>
+
+          <h4 class="mono">What it does</h4>
+          <p>{{ node.what }}</p>
+
+          <h4 class="mono">Why it exists</h4>
+          <p>{{ node.why }}</p>
+
+          <h4 class="mono">Example</h4>
+          <p>{{ node.example }}</p>
+
+          <h4 class="mono">Common mistake</h4>
+          <p>{{ node.mistake }}</p>
+
+          <h4 class="mono">Best practice</h4>
+          <p>{{ node.bestPractice }}</p>
+        }
+      </div>
+    </div>
+  </div>
+</section>

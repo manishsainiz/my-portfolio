@@ -1,0 +1,32 @@
+<!--
+  NOTE for Manish: this section renders placeholder employment data from
+  core/data/misc.data.ts (EXPERIENCE_ENTRIES). Replace the company name,
+  dates, and role there with your real employment history.
+-->
+<section id="experience" class="section experience">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <p class="section-label">Experience</p>
+      <h2 class="section-title">Where this has been applied.</h2>
+    </div>
+
+    <ol class="experience__list">
+      @for (entry of entries; track entry.company) {
+        <li class="experience__entry card" appReveal>
+          @if (entry.isPlaceholder) {
+            <span class="pill experience__placeholder-flag">Placeholder — replace with real details</span>
+          }
+          <p class="experience__period mono">{{ entry.period }}</p>
+          <h3>{{ entry.role }}</h3>
+          <p class="experience__company">{{ entry.company }}</p>
+
+          <ul class="experience__responsibilities">
+            @for (item of entry.responsibilities; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

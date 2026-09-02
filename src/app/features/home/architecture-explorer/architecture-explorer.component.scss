@@ -1,0 +1,78 @@
+.architecture__layout {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 980px) {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: start;
+  }
+}
+
+.architecture__diagram {
+  padding: 1.5rem;
+}
+
+.architecture__svg {
+  width: 100%;
+  height: auto;
+}
+
+.architecture__edge {
+  stroke: var(--border-strong);
+  stroke-width: 1.5;
+}
+
+.architecture__node-group {
+  cursor: pointer;
+}
+
+.architecture__node-rect {
+  fill: var(--surface);
+  stroke: var(--border);
+  stroke-width: 1.5;
+  transition: fill var(--dur-fast) var(--ease-out), stroke var(--dur-fast) var(--ease-out);
+}
+
+.architecture__node-label {
+  fill: var(--text-muted);
+  font-size: 13px;
+  transition: fill var(--dur-fast) var(--ease-out);
+}
+
+.architecture__node-group:hover .architecture__node-rect {
+  stroke: var(--border-strong);
+}
+
+.architecture__node-group--active .architecture__node-rect {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+}
+
+.architecture__node-group--active .architecture__node-label {
+  fill: var(--accent-strong);
+}
+
+.architecture__info {
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  position: sticky;
+  top: 6rem;
+}
+
+.architecture__info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.architecture__info h4 {
+  margin-top: 1.1rem;
+  margin-bottom: 0.35rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.architecture__info p {
+  font-size: 0.9rem;
+}

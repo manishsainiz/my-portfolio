@@ -1,0 +1,39 @@
+<section id="angular-evolution" class="section evolution">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <p class="section-label">Angular</p>
+      <h2 class="section-title">Angular has evolved. So has frontend architecture.</h2>
+      <p class="section-sub">
+        I understand the evolution of Angular architecture and can work with both legacy and modern Angular
+        codebases, including modernization and migration concepts.
+      </p>
+    </div>
+
+    <ol class="evolution__list">
+      @for (item of timeline; track item.id; let i = $index) {
+        <li class="evolution__item" appReveal>
+          <button
+            type="button"
+            class="evolution__row"
+            [class.evolution__row--active]="expandedId() === item.id"
+            [attr.aria-expanded]="expandedId() === item.id"
+            (click)="toggle(item.id)"
+          >
+            <span class="evolution__index mono">{{ (i + 1).toString().padStart(2, '0') }}</span>
+            <span class="evolution__text">
+              <span class="evolution__title">{{ item.title }}</span>
+              <span class="evolution__summary">{{ item.summary }}</span>
+            </span>
+            <span class="evolution__chevron" aria-hidden="true">{{ expandedId() === item.id ? '−' : '+' }}</span>
+          </button>
+
+          @if (expandedId() === item.id) {
+            <div class="evolution__detail">
+              <p>{{ item.detail }}</p>
+            </div>
+          }
+        </li>
+      }
+    </ol>
+  </div>
+</section>

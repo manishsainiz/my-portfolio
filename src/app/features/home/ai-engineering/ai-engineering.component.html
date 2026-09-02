@@ -1,0 +1,58 @@
+<section id="ai" class="section ai-engineering">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <p class="section-label">The next chapter</p>
+      <h2 class="section-title">The next chapter: AI Engineering.</h2>
+      <p class="section-sub">Moving from building applications to building intelligent development systems.</p>
+    </div>
+
+    <ol class="ai__roadmap mono" appReveal>
+      @for (step of roadmap; track step.label; let last = $last) {
+        <li class="ai__roadmap-step">
+          <span class="ai__roadmap-badge" [class]="'ai__roadmap-badge--' + step.status">{{ step.label }}</span>
+          @if (!last) {
+            <span class="ai__roadmap-arrow" aria-hidden="true">↓</span>
+          }
+        </li>
+      }
+    </ol>
+
+    <div class="ai__flagship card" appReveal>
+      <span class="pill ai__status">Building / Exploring</span>
+      <h3>Personal AI Coding Agent</h3>
+      <p class="ai__flagship-desc">
+        A conceptual architecture for an agent that plans, reads codebase context, and uses real developer
+        tools to make and validate changes — not a claim that this exists as a shipped product today.
+      </p>
+
+      <div class="ai__diagram mono">
+        <div class="ai__diagram-col">
+          @for (step of agentPipeline; track step; let last = $last) {
+            <span class="ai__diagram-node">{{ step }}</span>
+            @if (!last) {
+              <span class="ai__diagram-arrow" aria-hidden="true">↓</span>
+            }
+          }
+        </div>
+
+        <div class="ai__diagram-tools">
+          <span class="ai__diagram-tools-label">Tools</span>
+          <ul>
+            @for (tool of agentTools; track tool) {
+              <li class="pill">{{ tool }}</li>
+            }
+          </ul>
+        </div>
+
+        <div class="ai__diagram-col">
+          @for (step of agentOutput; track step; let last = $last) {
+            <span class="ai__diagram-node">{{ step }}</span>
+            @if (!last) {
+              <span class="ai__diagram-arrow" aria-hidden="true">↓</span>
+            }
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

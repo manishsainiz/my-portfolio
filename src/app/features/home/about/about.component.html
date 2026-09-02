@@ -1,0 +1,23 @@
+<section id="about" class="section about">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <p class="section-label">About</p>
+      <h2 class="section-title">Engineering beyond the component.</h2>
+      <p class="section-sub">
+        Production Angular development means more than templates and services — it's reactive programming,
+        authentication, payments, SSR, performance, API integration, production debugging, deployment, and
+        keeping all of it maintainable as the application grows.
+      </p>
+    </div>
+
+    <div class="about__grid">
+      @for (cat of categories; track cat.index) {
+        <div class="about__row card" appReveal>
+          <span class="about__index mono">{{ cat.index }}</span>
+          <h3 class="about__title">{{ cat.title }}</h3>
+          <p class="about__desc">{{ cat.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

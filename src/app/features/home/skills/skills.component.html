@@ -1,0 +1,32 @@
+<section id="skills" class="section skills">
+  <div class="container">
+    <div class="section-head" appReveal>
+      <p class="section-label">Skills</p>
+      <h2 class="section-title">A working toolkit, organized by how it's actually used.</h2>
+    </div>
+
+    <div class="skills__tabs" role="tablist" aria-label="Skill categories" appReveal>
+      @for (cat of categories; track cat.id) {
+        <button
+          type="button"
+          role="tab"
+          class="skills__tab mono"
+          [class.skills__tab--active]="activeId() === cat.id"
+          [attr.aria-selected]="activeId() === cat.id"
+          (click)="select(cat.id)"
+        >
+          {{ cat.title }}
+        </button>
+      }
+    </div>
+
+    <div class="skills__panel card" appReveal>
+      <p class="skills__panel-desc">{{ activeCategory().description }}</p>
+      <ul class="skills__list">
+        @for (item of activeCategory().items; track item.name) {
+          <li class="pill skills__item">{{ item.name }}</li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>
