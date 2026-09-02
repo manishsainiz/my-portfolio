@@ -1,23 +1,196 @@
 <section id="about" class="section about">
+
+  <div class="about__grid-bg"></div>
+
   <div class="container">
-    <div class="section-head" appReveal>
-      <p class="section-label">About</p>
-      <h2 class="section-title">Engineering beyond the component.</h2>
-      <p class="section-sub">
-        Production Angular development means more than templates and services — it's reactive programming,
-        authentication, payments, SSR, performance, API integration, production debugging, deployment, and
-        keeping all of it maintainable as the application grows.
-      </p>
+
+    <!-- HEADER -->
+    <div class="about__header" appReveal>
+
+      <div class="about__eyebrow mono">
+        <span>02</span>
+        <span>/</span>
+        <span>ABOUT ENGINEER</span>
+      </div>
+
+      <div class="about__header-line"></div>
+
     </div>
 
-    <div class="about__grid">
-      @for (cat of categories; track cat.index) {
-        <div class="about__row card" appReveal>
-          <span class="about__index mono">{{ cat.index }}</span>
-          <h3 class="about__title">{{ cat.title }}</h3>
-          <p class="about__desc">{{ cat.description }}</p>
-        </div>
-      }
+
+    <!-- MAIN INTRO -->
+    <div class="about__intro">
+
+      <div class="about__statement" appReveal>
+
+        <p class="about__label mono">
+          ENGINEERING MINDSET
+        </p>
+
+        <h2>
+          I don't just build
+          <span>features.</span>
+          I build systems.
+        </h2>
+
+      </div>
+
+
+      <div class="about__description" appReveal>
+
+        <p>
+          Production Angular development is about much more than
+          components and templates.
+        </p>
+
+        <p>
+          I work across the entire frontend engineering lifecycle —
+          from architecture and reactive state management to APIs,
+          authentication, payments, SSR, performance, debugging
+          and production deployments.
+        </p>
+
+        <p>
+          The goal is simple:
+          <strong>build software that stays fast, reliable and
+          maintainable as it grows.</strong>
+        </p>
+
+      </div>
+
     </div>
+
+
+    <!-- ENGINEERING PROFILE -->
+    <div class="about__profile">
+
+      <div class="about__profile-header">
+
+        <span class="mono">
+          ENGINEERING_PROFILE
+        </span>
+
+        <span class="about__profile-status">
+          ● ACTIVE
+        </span>
+
+      </div>
+
+
+      <!-- CAPABILITIES -->
+      <div class="about__capabilities">
+
+        @for (cat of categories; track cat.index) {
+
+          <article
+            class="about__capability"
+            appReveal
+          >
+
+            <div class="about__capability-top">
+
+              <span class="about__index mono">
+                {{ cat.index }}
+              </span>
+
+              <span class="about__arrow">
+                ↗
+              </span>
+
+            </div>
+
+            <h3>
+              {{ cat.title }}
+            </h3>
+
+            <p>
+              {{ cat.description }}
+            </p>
+
+            <div class="about__capability-line"></div>
+
+          </article>
+
+        }
+
+      </div>
+
+
+      <!-- ENGINEERING METRICS -->
+      <div class="about__metrics">
+
+        <div class="about__metric">
+
+          <span class="metric-value">
+            05+
+          </span>
+
+          <span class="metric-label mono">
+            YEARS ENGINEERING
+          </span>
+
+        </div>
+
+
+        <div class="about__metric">
+
+          <span class="metric-value">
+            ANGULAR
+          </span>
+
+          <span class="metric-label mono">
+            PRIMARY ECOSYSTEM
+          </span>
+
+        </div>
+
+
+        <div class="about__metric">
+
+          <span class="metric-value">
+            SSR
+          </span>
+
+          <span class="metric-label mono">
+            PERFORMANCE
+          </span>
+
+        </div>
+
+
+        <div class="about__metric">
+
+          <span class="metric-value">
+            RxJS
+          </span>
+
+          <span class="metric-label mono">
+            REACTIVE SYSTEMS
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- BOTTOM STATEMENT -->
+    <div class="about__bottom" appReveal>
+
+      <span class="mono">
+        PRINCIPLE
+      </span>
+
+      <div class="about__bottom-line"></div>
+
+      <p>
+        <span>Good architecture</span>
+        makes complex software feel simple.
+      </p>
+
+    </div>
+
   </div>
+
 </section>

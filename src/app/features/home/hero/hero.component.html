@@ -1,50 +1,374 @@
-<section id="home" class="hero section">
-  <div class="container hero__grid">
-    <div class="hero__copy" appReveal>
-      <p class="section-label">Senior Angular Developer / Frontend Engineer</p>
-      <h1 class="hero__headline">Building fast, scalable web experiences with Angular.</h1>
-      <p class="hero__sub">
-        Senior Angular Developer focused on frontend architecture, reactive systems, SSR, performance and
-        production-grade applications.
+<section id="home" class="hero">
+  <div class="hero__noise"></div>
+
+  <div class="hero__grid-bg"></div>
+
+  <div class="hero__container">
+
+    <!-- LEFT CONTENT -->
+    <div class="hero__content">
+
+      <div class="hero__eyebrow">
+        <span class="status-dot"></span>
+        <span>AVAILABLE FOR OPPORTUNITIES</span>
+        <span class="eyebrow-line"></span>
+        <span class="mono">INDIA / REMOTE</span>
+      </div>
+
+      <div class="hero__number mono">
+        01 <span>/</span> 04
+      </div>
+
+      <h1 class="hero__title">
+        I build
+        <span class="hero__title-gradient">digital systems</span>
+        that scale.
+      </h1>
+
+      <p class="hero__description">
+        Senior Angular Developer & Frontend Engineer specializing in
+        high-performance applications, reactive architecture,
+        SSR and production-grade digital experiences.
       </p>
 
-      <div class="hero__ctas">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="#angular-evolution" class="btn btn-ghost">Explore Angular Knowledge</a>
-        <a href="#contact" class="btn btn-ghost">Contact Me</a>
-        <a href="/resume-placeholder.pdf" class="btn btn-ghost" download>Download Resume</a>
-      </div>
+      <!-- TECH STACK -->
+      <div class="hero__stack">
 
-      <ol class="hero__flow mono" aria-label="Engineering stack flow">
-        @for (step of flow; track step.label; let last = $last) {
-          <li class="hero__flow-step">
-            <span>{{ step.label }}</span>
-            @if (!last) {
-              <span class="hero__flow-arrow" aria-hidden="true">↓</span>
-            }
-          </li>
-        }
-      </ol>
-    </div>
+        <span class="stack-label mono">CORE STACK</span>
 
-    <div class="hero__visual" appReveal aria-hidden="true">
-      <div class="hero__orbit">
-        <div class="hero__center">
-          <span class="mono">ANGULAR</span>
-          <span class="mono hero__center-sub">ENGINEER</span>
+        <div class="stack-items">
+
+          <span class="stack-item">
+            <span class="stack-icon">A</span>
+            Angular
+          </span>
+
+          <span class="stack-item">
+            <span class="stack-icon">TS</span>
+            TypeScript
+          </span>
+
+          <span class="stack-item">
+            <span class="stack-icon">Rx</span>
+            RxJS
+          </span>
+
+          <span class="stack-item">
+            <span class="stack-icon">S</span>
+            Signals
+          </span>
+
+          <span class="stack-item">
+            <span class="stack-icon">SSR</span>
+            SSR
+          </span>
+
         </div>
-        @for (node of nodes; track node.label) {
-          <div
-            class="hero__node mono"
-            [class.hero__node--accent]="node.label === 'AI'"
-            [style.top.%]="node.top"
-            [style.left.%]="node.left"
-            [style.animation-delay.s]="node.delay"
-          >
-            {{ node.label }}
-          </div>
-        }
       </div>
+
+      <!-- ACTIONS -->
+      <div class="hero__actions">
+
+        <a href="#projects" class="hero-btn hero-btn--primary">
+          <span>Explore My Work</span>
+          <span class="hero-btn__arrow">↗</span>
+        </a>
+
+        <a href="#contact" class="hero-btn hero-btn--secondary">
+          Let's Talk
+        </a>
+
+        <a
+          href="/resume-placeholder.pdf"
+          class="hero-resume"
+          download
+        >
+          Download Resume
+          <span>↓</span>
+        </a>
+
+      </div>
+
+      <!-- STATS -->
+      <div class="hero__stats">
+
+        <div class="hero-stat">
+          <strong>05+</strong>
+          <span>Years Experience</span>
+        </div>
+
+        <div class="hero-stat">
+          <strong>20+</strong>
+          <span>Projects Delivered</span>
+        </div>
+
+        <div class="hero-stat">
+          <strong>∞</strong>
+          <span>Problems Solved</span>
+        </div>
+
+      </div>
+
     </div>
+
+
+    <!-- RIGHT VISUAL -->
+    <div class="hero__visual">
+
+      <!-- TOP LABEL -->
+      <div class="visual-label visual-label--top mono">
+        <span class="pulse"></span>
+        SYSTEM ARCHITECTURE
+      </div>
+
+
+      <!-- MAIN ARCHITECTURE -->
+      <div class="architecture">
+
+        <!-- SVG CONNECTIONS -->
+        <svg
+          class="architecture__lines"
+          viewBox="0 0 700 620"
+          preserveAspectRatio="none"
+        >
+
+          <path
+            d="M350 310 L170 130"
+            class="connection"
+          />
+
+          <path
+            d="M350 310 L530 130"
+            class="connection"
+          />
+
+          <path
+            d="M350 310 L120 310"
+            class="connection"
+          />
+
+          <path
+            d="M350 310 L580 310"
+            class="connection"
+          />
+
+          <path
+            d="M350 310 L170 490"
+            class="connection"
+          />
+
+          <path
+            d="M350 310 L530 490"
+            class="connection"
+          />
+
+        </svg>
+
+
+        <!-- CENTER -->
+        <div class="architecture__center">
+
+          <div class="center-ring center-ring--outer"></div>
+          <div class="center-ring center-ring--inner"></div>
+
+          <div class="center-core">
+
+            <span class="angular-mark">A</span>
+
+            <span class="mono">ANGULAR</span>
+
+            <small class="mono">
+              ENGINEERING CORE
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <!-- NODES -->
+
+        <div class="architecture-node node--1">
+          <span class="node-icon">⚡</span>
+          <div>
+            <strong>Signals</strong>
+            <small>Reactive State</small>
+          </div>
+        </div>
+
+
+        <div class="architecture-node node--2">
+          <span class="node-icon">Rx</span>
+          <div>
+            <strong>RxJS</strong>
+            <small>Reactive Streams</small>
+          </div>
+        </div>
+
+
+        <div class="architecture-node node--3">
+          <span class="node-icon">◎</span>
+          <div>
+            <strong>SSR</strong>
+            <small>Server Rendering</small>
+          </div>
+        </div>
+
+
+        <div class="architecture-node node--4">
+          <span class="node-icon">TS</span>
+          <div>
+            <strong>TypeScript</strong>
+            <small>Type Safety</small>
+          </div>
+        </div>
+
+
+        <div class="architecture-node node--5">
+          <span class="node-icon">CI</span>
+          <div>
+            <strong>CI / CD</strong>
+            <small>Automation</small>
+          </div>
+        </div>
+
+
+        <div class="architecture-node node--6">
+          <span class="node-icon">AI</span>
+          <div>
+            <strong>AI</strong>
+            <small>Intelligent Systems</small>
+          </div>
+        </div>
+
+
+        <!-- CODE WINDOW -->
+       <!-- CODE WINDOW -->
+<div class="code-window">
+
+  <div class="code-window__header">
+
+    <div class="window-dots">
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+
+    <span class="mono">
+      architecture.ts
+    </span>
+
+    <span class="code-status mono">
+      ● LIVE
+    </span>
+
   </div>
+
+  <div class="code-window__body mono">
+
+    <div>
+      <span class="code-number">01</span>
+      <span class="purple">export</span>
+      <span class="blue">class</span>
+      <span class="white">Architecture</span>
+    </div>
+
+    <div>
+      <span class="code-number">02</span>
+      <span class="purple">extends</span>
+      <span class="white">ScalableSystem</span>
+    </div>
+
+    <div>
+      <span class="code-number">03</span>
+    </div>
+
+    <div>
+      <span class="code-number">04</span>
+      <span class="blue">readonly</span>
+      <span class="cyan">performance</span>
+      <span>=</span>
+      <span class="green">true</span>
+    </div>
+
+    <div>
+      <span class="code-number">05</span>
+      <span class="code-number">05</span>
+      <span class="blue">readonly</span>
+      <span class="cyan">reactive</span>
+      <span>=</span>
+      <span class="green">true</span>
+    </div>
+
+    <div>
+      <span class="code-number">06</span>
+      <span class="blue">readonly</span>
+      <span class="cyan">productionReady</span>
+      <span>=</span>
+      <span class="green">true</span>
+    </div>
+
+    <div>
+      <span class="code-number">07</span>
+    </div>
+
+    <div>
+      <span class="code-number">08</span>
+      <span class="purple">build</span>
+      <span>()</span>
+      <span>&#123;</span>
+    </div>
+
+    <div>
+      <span class="code-number">09</span>
+      <span class="indent">this</span>
+      <span>.</span>
+      <span class="cyan">ship</span>
+      <span>();</span>
+    </div>
+
+    <div>
+      <span class="code-number">10</span>
+      <span>&#125;</span>
+    </div>
+
+  </div>
+
+</div>
+
+      </div>
+
+
+      <!-- BOTTOM STATUS -->
+      <div class="visual-status mono">
+
+        <div>
+          <span class="status-dot"></span>
+          SYSTEM ONLINE
+        </div>
+
+        <div>
+          <span>BUILD</span>
+          <strong>OPTIMIZED</strong>
+        </div>
+
+        <div>
+          <span>RENDER</span>
+          <strong>SSR</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- SCROLL -->
+  <div class="hero__scroll mono">
+    <span>SCROLL TO EXPLORE</span>
+    <div class="scroll-line"></div>
+    <span>↓</span>
+  </div>
+
 </section>
